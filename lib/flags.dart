@@ -1,11 +1,11 @@
 import 'package:assignment2/widgets/flagsCard.dart';
 import 'package:flutter/material.dart';
 
-class ResponsiveUi extends StatefulWidget {
-  const ResponsiveUi({super.key});
+class Flags extends StatefulWidget {
+  const Flags({super.key});
 
   @override
-  State<ResponsiveUi> createState() => _ResponsiveUiState();
+  State<Flags> createState() => _FlagsState();
 }
 final List<Map<String, String>> flags = [
   {"title": "United States", "flag": "🇺🇸"},
@@ -30,7 +30,7 @@ final List<Map<String, String>> flags = [
   {"title": "United Arab Emirates", "flag": "🇦🇪"},
 ];
 
-class _ResponsiveUiState extends State<ResponsiveUi> {
+class _FlagsState extends State<Flags> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
