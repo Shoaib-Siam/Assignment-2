@@ -4,82 +4,85 @@ class FlagsCard extends StatelessWidget {
   final String name;
   final String imagePath;
   final String description;
+  final String population;
 
-  const FlagsCard({Key? key, required this.name, required this.imagePath, required this.description})
-    : super(key: key);
+  const FlagsCard({
+    super.key,
+    required this.name,
+    required this.imagePath,
+    required this.description,
+    required this.population,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5),
-      ),
       elevation: 4,
-      child: Column(
-        children: [
-          Expanded(
-            child: ClipRRect(
-              borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(5),
-              ),
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.cover,
-                width: double.infinity,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Text(
-              name,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-              textAlign: TextAlign.center,
-            ),
-          ),
-
-          Padding(
-          padding: const EdgeInsets.all(8),
-            child: Text(
-              description,
-              style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-              ),),
-          ),
-
-          Padding(
-            padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            // Flag Image
+            AspectRatio(
+              aspectRatio: 16 / 9,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
                 ),
-                minimumSize: const Size.fromHeight(10),
-                backgroundColor: Colors.blue,
-                foregroundColor: Colors.white,
-              ),
-              onPressed: () {},
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:[
-                  // const Icon(Icons.arrow_back),
-                  // Text("Back"),
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(Icons.arrow_forward),
-                        Text("View Details"),
-                      ],
-                    ),
-                  ),
-
-                ],
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 8),
+            // Country name & population
+            Row(
+              children: [
+                const Icon(Icons.flag, size: 16),
+                const SizedBox(width: 4),
+                Expanded(
+                  child: Text(
+                    name,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                const Icon(Icons.people, size: 16),
+                const SizedBox(width: 4),
+                Text(population),
+              ],
+            ),
+            const SizedBox(height: 8),
+            // Description
+            Expanded(
+              child: Text(
+                description,
+                style: const TextStyle(fontSize: 13),
+                overflow: TextOverflow.fade,
+                maxLines: 3,
+              ),
+            ),
+            const SizedBox(height: 8),
+            // View Details button
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  backgroundColor: Colors.teal,
+                  foregroundColor: Colors.white,
+                ),
+                onPressed: () {},
+                icon: const Icon(Icons.arrow_forward),
+                label: const Text("View Details"),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
