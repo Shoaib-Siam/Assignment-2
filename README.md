@@ -1,6 +1,6 @@
 # assignment2
 
-A new Flutter project.
+A new Flutter project Where We Can See Country's Flag, Population and Short Description
 
 ## Getting Started
 
