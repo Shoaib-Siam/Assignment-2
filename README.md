@@ -1,6 +1,6 @@
-# assignment2
+Country's Flags
 
-A new Flutter project Where We Can See Country's Flag, Population and Short Description
+A Flutter App Where We Can See Country's Flag, Population and Short Description
 
 ## Getting Started
 
