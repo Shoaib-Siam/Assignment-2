@@ -69,12 +69,12 @@ class FlagsCard extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
-                  elevation: 8,
+                  elevation: 5,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  backgroundColor: Colors.teal,
-                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.grey[300],
+                  foregroundColor: Colors.black,
                 ),
                 onPressed: () {},
                 icon: const Icon(Icons.arrow_forward),
