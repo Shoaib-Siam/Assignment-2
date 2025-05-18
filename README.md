@@ -1,6 +1,6 @@
 Country's Flags
 
-A Flutter App Where We Can See Country's Flag, Population and Short Description
+A Flutter App Where We Can See All The Country's Flags, Population and Short Description
 
 ## Getting Started
 
